@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <!-- font awsome -->
+    <script src="https://kit.fontawesome.com/c91c0a21e3.js" crossorigin="anonymous"></script>
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charis+SIL&display=swap" rel="stylesheet">
+    <!-- mi css -->
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Dekorkunst Prueba</title>
+</head>
+<body>
+    <nav class="menu">
+        <div>
+            <a href="index.html"><img class="logo" src="img/logo2.png" alt="logo"/></a>
+        </div>
+        <ul class="menuItems">
+            <li><a href="index.html"> Home </a></li>
+            <!-- <li><a href="./pages/deco.html"> Deco </a></li>
+            <li><a href="./pages/cuadros.html"> Cuadros </a></li>
+            <li><a href="./pages/velas.html"> Velas </a></li>
+            <li><a href="./pages/contacto.html"> Contacto </a></li> -->
+        </ul>
+        <div class="btnCarrito">
+            <label for="btnCarrito"> <i class="fa fa-cart-plus"></i> </label>
+        </div>
+        <span class="btnMenu">
+            <i class="fa-solid fa-bars"></i>
+        </span>
+    </nav>
+    <input type="checkbox" id="btnCarrito">
+    <div class="containerCarrito">
+        <table class="table">
+            <tbody id="items"></tbody>
+            <tfoot>
+              <tr id="footer">
+                <th scope="row" colspan="5">Carrito vacío</th>
+              </tr>
+            </tfoot>
+          </table>
+    </div>
+    <main>
+        <!-- cards -->
+        <section class="container">
+            <div class="row">
+                <article class="col-md-4 col-sm-12 mt-5">
+                    <div class="card">
+                        <img src="./img/bauleraAmarilla2.jpeg" alt="baulera amarilla" class="card-img card-img-filter">
+                        <div class="card-img-overlay text-white d-flex flex-column justify-content-center align-items-center">
+                            <h3>Deco</h3>
+                            <a href="./pages/deco.html" class="text-reset look-more">Look more</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-4 col-sm-12 mt-5">
+                    <div class="card">
+                        <img src="./img/comoda.jpeg" alt="cuadro" class="card-img card-img-filter">
+                        <div class="card-img-overlay text-white d-flex flex-column justify-content-center align-items-center">
+                            <h3>Cuadros</h3>
+                            <a href="./pages/cuadros.html" class="text-reset look-more">Look more</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="col-md-4 col-sm-12 mt-5">
+                    <div class="card">
+                        <img src="./img/setMuebleCuadro3.jpeg" alt="velas" class="card-img card-img-filter">
+                        <div class="card-img-overlay text-white d-flex flex-column justify-content-center align-items-center">
+                            <h3>Velas</h3>
+                            <a href="./pages/velas.html" class="text-reset look-more">Look more</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+            <div class="linea"></div>
+        </section>
+        <!-- best sellers -->
+        <section class="container">
+            <h2 class="text-center mt-5 titulo">BEST SELLERS</h2>
+            <div class="linea"></div>
+            <div class="cardContenedor mt-5 mb-5" id="cards">
+                <!-- aca adentro pinto mis cards -->
+            </div>
+        </section>
+
+        <template id="templateCard">
+            <div class="card">
+                <div class="cardImgBx">
+                    <img src="" class="itemImg" alt="">
+                    <ul class="action">
+                        <li class="actionBox">
+                            <i class="fa fa-heart" aria-hidden="true"></i>
+                            <span>Lista de Deseos</span>
+                        </li>
+                        <li class="actionBox btnAgregarCarrito fa fa-cart-plus">
+                            <span>Carrito de Compras</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="cardContenido">
+                    <div class="nombreProducto text-center">
+                        <h4 class="title">nombre</h4>
+                    </div>
+                    <div class="precioProducto text-center">
+                        <h3 class="precio">precio</h3>
+                    </div>
+                </div>
+            </div>
+        </template>
+        
+        <template id="templateCarrito">
+          <tr>
+            <td scope="row"><img src="" alt="" class="imgCarrito"></td>
+            <td class="mt-2">Café</td>
+            <td>1</td>
+            <td>
+                <button class="btn btn-dark btnAdd btn-sm">
+                    +
+                </button>
+                <button class="btn btn-dark btnDelete btn-sm">
+                    -
+                </button>
+            </td>
+            <td>$ <span>500</span></td>
+          </tr>
+        </template>
+
+        <template id="templateFooter">
+            <th scope="row" colspan="2">Total productos</th>
+            <td>10</td>
+            <td>
+                <button class="btn btn-danger btn-sm" id="vaciarCarrito">
+                    vaciar carrito
+                </button>
+            </td>
+            <td class="font-weight-bold">$ <span>5000</span></td>
+        </template>
+
+    </main>
+    <!-- footer -->
+    <footer>
+        <div class="container-fluid px-md-5 px-lg-6 px-xl-8">
+            <div class="row py-5 lineaFooter">
+                <div class="col-12 col-md-6 col-lg-4 mb-lg-0 d-flex justify-content-center justify-content-lg-start align-items-center">
+                    <a href="index.html">
+                        <img class="logoFooter" src="./img/logo2.png" alt="Dekorkunst">
+                    </a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-2 text-md-center text-center">
+                    <ul class="foot-navigation p-0 mb-sm-4">
+                        <li class="mb-1">
+                            <a class="nav-link-footer" href="#">Home</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="nav-link-footer" href="./pages/deco.html">Deco</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="nav-link-footer" href="./pages/cuadros.html">Cuadros</a>
+                        </li>
+                        <li class="mb-1">
+                            <a class="nav-link-footer" href="./pages/velas.html">Velas</a>
+                        </li>
+                        <!-- <li class="mb-1">
+                            <a class="nav-link-footer" href="./pages/contacto.html">Contacto</a>
+                        </li> -->
+                    </ul>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 text-md-center text-center  mb-sm-4 contacto">
+                    <p class="mb-1">Direccion: Pacheco de Melo 2980</p>
+                    <p class="mb-1">Tel: 2474-400742</p>
+                    <p class="mail mb-1">Mail: ventas@dekorkunst.net</p>
+                    <a class="d-inline-block"><i class="fa-brands fa-instagram fa-2xl icono"></i></a>
+                    <a class="d-inline-block"><i class="fa-brands fa-whatsapp fa-2xl icono"></i></a>
+                </div>
+                <div class="col-12 col-md-6 col-lg-3 text-center">
+                    <form>
+                        <p class="newsletter">Newsletter</p>
+                        <input type="email" class="form-control" placeholder="Ingresa tu direccion de email">
+                        <button type="submit" class="form-btn">Enviar</button>
+                    </form>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-center text-lg-start">
+                        <p class="mb-4">© Dekorkunst 2022 - Todos los derechos reservados</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="./js/app.js"></script>
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+</body>
+</html>
