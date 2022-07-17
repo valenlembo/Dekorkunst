@@ -65,129 +65,29 @@
           </table>
     </div>
     <main>
-        <!-- cards -->
-        <section class="container">
-            <div class="row">
-                <article class="col-md-4 col-sm-12 mt-5">
-                    <div class="card">
-                        <img src="./img/bauleraAmarilla2.jpeg" alt="baulera amarilla" class="card-img card-img-filter">
-                        <div class="card-img-overlay text-white d-flex flex-column justify-content-center align-items-center">
-                            <h3>Deco</h3>
-                            <a href="deco.html" class="text-reset look-more">Look more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-12 mt-5">
-                    <div class="card">
-                        <img src="./img/comoda.jpeg" alt="cuadro" class="card-img card-img-filter">
-                        <div class="card-img-overlay text-white d-flex flex-column justify-content-center align-items-center">
-                            <h3>Cuadros</h3>
-                            <a href="cuadros.html" class="text-reset look-more">Look more</a>
-                        </div>
-                    </div>
-                </article>
-                <article class="col-md-4 col-sm-12 mt-5">
-                    <div class="card">
-                        <img src="./img/setMuebleCuadro3.jpeg" alt="velas" class="card-img card-img-filter">
-                        <div class="card-img-overlay text-white d-flex flex-column justify-content-center align-items-center">
-                            <h3>Velas</h3>
-                            <a href="velas.html" class="text-reset look-more">Look more</a>
-                        </div>
-                    </div>
-                </article>
-            </div>
-            <div class="linea"></div>
-        </section>
-        <!-- best sellers -->
-        <section class="container">
-            <h2 class="text-center mt-5 titulo">BEST SELLERS</h2>
-            <div class="linea"></div>
-            <div class="cardContenedor mt-5 mb-5" id="cards">
-                <!-- aca adentro pinto mis cards -->
-            </div>
-        </section>
         <!-- deco -->
         <section class="container">
-            <h2 class="text-center mt-5 titulo">BEST SELLERS</h2>
+            <h2 class="text-center mt-5 titulo">DECO</h2>
             <div class="linea"></div>
             <div class="cardContenedor mt-5 mb-5" id="cardsDeco">
                 <!-- aca adentro pinto mis cards -->
             </div>
         </section>
 
-        <template id="templateCard">
-            <div class="card">
-                <div class="cardImgBx">
-                    <img src="" class="itemImg" alt="">
-                    <ul class="action">
-                        <li class="actionBox btnFavoritos fa fa-heart">
-                            <span>Lista de Deseos</span>
-                        </li>
-                        <li class="actionBox btnAgregarCarrito fa fa-cart-plus">
-                            <span>Carrito de Compras</span>
-                        </li>
-                    </ul>
-                </div>
-                <div class="cardContenido">
-                    <div class="nombreProducto text-center">
-                        <h4 class="title">nombre</h4>
-                    </div>
-                    <div class="precioProducto text-center">
-                        <h3 class="precio">precio</h3>
-                    </div>
-                </div>
-            </div>
-        </template>
-        
-        <template id="templateCarrito">
-          <tr>
-            <td scope="row"><img src="" alt="" class="imgCarrito"></td>
-            <td class="mt-2">Café</td>
-            <td>1</td>
-            <td>
-                <button class="btn btn-dark btnAdd btn-sm">
-                    +
-                </button>
-                <button class="btn btn-dark btnDelete btn-sm">
-                    -
-                </button>
-            </td>
-            <td>$ <span>500</span></td>
-          </tr>
-        </template>
-
-        <template id="templateFooter">
-            <th scope="row" colspan="2">Total productos</th>
-            <td>10</td>
-            <td>
-                <button class="btn btn-danger btn-sm" id="vaciarCarrito">
-                    vaciar carrito
-                </button>
-            </td>
-            <td class="font-weight-bold">$ <span>5000</span></td>
-        </template>
-
-        <template id="templateFavoritos">
-            <tr>
-              <td scope="row"><img src="" alt="" class="imgFav"></td>
-              <td class="mt-2">Café</td>
-              <td>$ <span>500</span></td>
-            </tr>
-        </template>
     </main>
     <!-- footer -->
     <footer>
         <div class="container-fluid px-md-5 px-lg-6 px-xl-8">
             <div class="row py-5 lineaFooter">
                 <div class="col-12 col-md-6 col-lg-4 mb-lg-0 d-flex justify-content-center justify-content-lg-start align-items-center">
-                    <a href="index.html">
+                    <a href="./index.html">
                         <img class="logoFooter" src="./img/logo2.png" alt="Dekorkunst">
                     </a>
                 </div>
                 <div class="col-12 col-md-6 col-lg-2 text-md-center text-center">
                     <ul class="foot-navigation p-0 mb-sm-4">
                         <li class="mb-1">
-                            <a class="nav-link-footer" href="#">Home</a>
+                            <a class="nav-link-footer" href="index.html">Home</a>
                         </li>
                         <li class="mb-1">
                             <a class="nav-link-footer" href="deco.html">Deco</a>
@@ -230,6 +130,7 @@
 
     
     <script src="./js/app.js"></script>
+    <script src="./js/deco.js"></script>
     <!-- bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>

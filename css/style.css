@@ -41,15 +41,15 @@ body {
     transition: 0.4s;
 	border-radius: 8px;
 }
-/* carrito */
-.btnCarrito { 
+/* carrito y wish list*/
+.btnCarrito, .btnDeseos { 
 	font-size: larger;
 	padding-right: 100px;
 }
-#btnCarrito{
+#btnCarrito, #btnDeseos{
 	display: none;
 }
-.containerCarrito{
+.containerCarrito, .containerDeseos{
 	position: absolute;
 	width: 100%;
 	top: 140px;
@@ -58,17 +58,17 @@ body {
 	visibility: hidden;
 	transition: 1s;
 	max-width: 550px;
-	background: #e8e7e7;
+	background: #f2f2f2;
 	height: 400px;
 	border-radius: 0 0 10px 10px;
 	right: 0px;
 	overflow-y: scroll;
 }
-#btnCarrito:checked ~ .containerCarrito{
+#btnCarrito:checked ~ .containerCarrito, #btnDeseos:checked ~ .containerDeseos{
 	opacity: 1;
 	visibility: visible;
 }
-.imgCarrito{
+.imgCarrito, .imgFav{
 	width: 100px;
 	height: 100px;
 	border-radius: 5px;
@@ -77,9 +77,8 @@ body {
 .btnDelete{
     width: 32px;
 }
-
 /* menu responsive */
-.btnMenu {
+#btnMenu {
     margin-right: 30px;
     font-size: 25px;
     color: rgb(0, 0, 0);
@@ -273,7 +272,7 @@ ul.show {
 		display: flex;
 		justify-content: center;
 	}
-	.menu .btnMenu {
+	.menu #btnMenu {
 		display: inline-flex;
 		padding: 35px;
 		color: rgb(68, 68, 68);
