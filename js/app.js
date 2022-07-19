@@ -69,17 +69,15 @@ const pintarCards = (data) =>{
 
 // capturar toda la card para el carrito
 const agregarAlCarrito = e =>{
-    if(e.target.classList.contains("btnAgregarCarrito")){
-        setCarrito(e.target.parentElement.parentElement.parentElement)
-    }
+    e.target.classList.contains("btnAgregarCarrito") && setCarrito(e.target.parentElement.parentElement.parentElement)
+    
     e.stopPropagation()
 }
 
 // aca para la wish list
 const agregarFavoritos = e =>{
-    if(e.target.classList.contains("btnFavoritos")){
-        setFavoritos(e.target.parentElement.parentElement.parentElement)
-    }
+    e.target.classList.contains("btnFavoritos") && setFavoritos(e.target.parentElement.parentElement.parentElement)
+    
     e.stopPropagation()
 }
 
@@ -154,7 +152,7 @@ const pintarFavoritos = () => {
 const pintarFooter = () => {
     footer.innerHTML = ""
     if(Object.keys(carrito).length === 0){
-        footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío</th>`
+        footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío</th>` 
         return
     }
     const nCantidad = Object.values(carrito).reduce((acc, {cantidad}) => acc + cantidad, 0)
@@ -175,12 +173,15 @@ const pintarFooter = () => {
 }
 
 const pintarFooterFav = () => {
+    const btnVaciarWL = document.getElementById("btnVaciarWL")
     footerFav.innerHTML= ""
     if(Object.keys(wishList).length === 0){
         footerFav.innerHTML = `<th scope="row" colspan="5">Wish List vacia</th>`
+        btnVaciarWL.innerHTML = ""
         return
     }else if(Object.keys(wishList).length >= 1){
-        footerFav.innerHTML = `<button class="btn" id="vaciarWL"> vaciar wish list </button>`
+        footerFav.innerHTML = ""
+        btnVaciarWL.innerHTML = `<button class="btn btn-danger" id="vaciarWL"> vaciar wish list </button>`
         const vaciarWL = document.getElementById("vaciarWL")
         vaciarWL.addEventListener("click", () => {
         wishList = {}

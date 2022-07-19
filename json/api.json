@@ -1,74 +1,114 @@
 [
     {
+      "categoria": "home",
       "precio": 5600,
       "id": 1,
       "title": "Almohadones Varios",
       "img": "./img/almohadones.jpeg"
     },
     {
+      "categoria": "home",
       "precio": 3500,
       "id": 2,
       "title": "Set Cuadros",
       "img": "./img/cuadros2.jpeg"
     },
     {
+      "categoria": "home",
       "precio": 6000,
       "id": 3,
       "title": "Pie de Cama Rojo",
       "img": "./img/pieDeCama2.jpeg" 
     },
     {
+      "categoria": "home",
       "precio": 1000,
       "id": 4,
       "title": "Short Ribbed Tower",
       "img": "./img/velas12.jpeg"
     },
     {
+      "categoria": "home",
       "precio": 6000,
       "id": 5,
       "title": "Cuadro Arbol",
       "img": "./img/cuadro3.jpeg"
     },
     {
+      "categoria": "home",
       "precio": 6550,
       "id": 6,
       "title": "Mixed Set",
       "img": "./img/velas13.jpeg"
     },
     {
-        "precio": 18000,
-        "id": 7,
-        "title": "Mesa de Madera",
-        "img": "./img/cuadros4.jpeg"
+      "categoria": "home",
+      "precio": 18000,
+      "id": 7,
+      "title": "Mesa de Madera",
+      "img": "./img/cuadros4.jpeg"
     },
     {
-        "precio": 1500,
-        "id": 8,
-        "title": "Set Cuadros Varios",
-        "img": "./img/cuadros12.jpeg"
+      "categoria": "home",
+      "precio": 1500,
+      "id": 8,
+      "title": "Set Cuadros Varios",
+      "img": "./img/cuadros12.jpeg"
     },
     {
-        "precio": 1500,
-        "id": 9,
-        "title": "Geo Lady",
-        "img": "./img/velas19.jpeg"
+      "categoria": "home",
+      "precio": 1500,
+      "id": 9,
+      "title": "Geo Lady",
+      "img": "./img/velas19.jpeg"
     },
     {
-        "precio": 18000,
-        "id": 10,
-        "title": "Alfombra",
-        "img": "./img/alfombra2.jpeg"
+      "categoria": "home",
+      "precio": 18000,
+      "id": 10,
+      "title": "Alfombra",
+      "img": "./img/alfombra2.jpeg"
     },
     {
-        "precio": 60000,
-        "id": 11,
-        "title": "Baulera Amarilla",
-        "img": "./img/bauleraAmarilla.jpeg"
+      "categoria": "home",
+      "precio": 60000,
+      "id": 11,
+      "title": "Baulera Amarilla",
+      "img": "./img/bauleraAmarilla.jpeg"
     },
     {
-        "precio": 15000,
-        "id": 12,
-        "title": "Set Cuadros Galaxia",
-        "img": "./img/cuadros11.jpeg"
+      "categoria": "home",
+      "precio": 15000,
+      "id": 12,
+      "title": "Set Cuadros Galaxia",
+      "img": "./img/cuadros11.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 5600,
+      "id": 13,
+      "title": "Almohadones Varios",
+      "img": "./img/almohadones.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 15500,
+      "id": 14,
+      "title": "Baulera Amarilla",
+      "img": "./img/bauleraAmarilla.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 290600,
+      "id": 15,
+      "title": "Set Mesa Y Bancos",
+      "img": "./img/mesaConBancos.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 205600,
+      "id": 16,
+      "title": "Set Mesa Y Banquetas",
+      "img": "./img/mesaYBanquetas.jpeg"
     }
   ]
