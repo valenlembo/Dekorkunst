@@ -30,6 +30,9 @@ cards.addEventListener("click", e=>{
     agregarAlCarrito(e)
 })
 cards.addEventListener("click", e=>{
+    agregarAlCarritoAlert(e)
+})
+cards.addEventListener("click", e=>{
     agregarFavoritos(e)
 })
 itemsCarrito.addEventListener("click", e => {
@@ -72,6 +75,18 @@ const agregarAlCarrito = e =>{
     e.target.classList.contains("btnAgregarCarrito") && setCarrito(e.target.parentElement.parentElement.parentElement)
     
     e.stopPropagation()
+}
+
+const agregarAlCarritoAlert = e =>{
+    if(e.target.classList.contains("btnAgregarCarrito")){
+        Swal.fire({​
+            position: 'top-end',​
+            icon: 'success',​
+            title: 'Your work has been saved',​
+            showConfirmButton: false,​
+            timer: 1500
+        })​
+    }
 }
 
 // aca para la wish list
@@ -211,3 +226,6 @@ const btnAccion = e => {
     }
     e.stopPropagation()
 }
+
+
+
