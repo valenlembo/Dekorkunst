@@ -1,3 +1,4 @@
+
 // vars globales
 const btnMenu = document.getElementById('btnMenu')
 const cards = document.getElementById("cards")
@@ -28,9 +29,6 @@ document.addEventListener("DOMContentLoaded", ()=>{
 })
 cards.addEventListener("click", e=>{
     agregarAlCarrito(e)
-})
-cards.addEventListener("click", e=>{
-    agregarAlCarritoAlert(e)
 })
 cards.addEventListener("click", e=>{
     agregarFavoritos(e)
@@ -70,23 +68,34 @@ const pintarCards = (data) =>{
     cards.appendChild(fragment)
 }
 
+
 // capturar toda la card para el carrito
 const agregarAlCarrito = e =>{
     e.target.classList.contains("btnAgregarCarrito") && setCarrito(e.target.parentElement.parentElement.parentElement)
+    // Swal.fire({
+    //     title: 'Genial!',
+    //     text: 'Se ha agregado su producto al carrito',
+    //     icon: 'success',
+    //     confirmButtonText: 'Cool'
+    //   })
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Su producto se ha añadido al carrito'
+      })
     
     e.stopPropagation()
-}
-
-const agregarAlCarritoAlert = e =>{
-    if(e.target.classList.contains("btnAgregarCarrito")){
-        Swal.fire({​
-            position: 'top-end',​
-            icon: 'success',​
-            title: 'Your work has been saved',​
-            showConfirmButton: false,​
-            timer: 1500
-        })​
-    }
 }
 
 // aca para la wish list
@@ -141,7 +150,7 @@ const pintarCarrito = () => {
         fragment.appendChild(clone)
     })
     itemsCarrito.appendChild(fragment)
-
+   
     pintarFooter()
     // gardamos nuestros productos en el ls
     localStorage.setItem("carrito", JSON.stringify(carrito))
@@ -226,6 +235,5 @@ const btnAccion = e => {
     }
     e.stopPropagation()
 }
-
 
 
