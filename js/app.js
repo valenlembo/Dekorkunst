@@ -1,7 +1,9 @@
 
-// vars globales
+// VARS GLOBALES
 const btnMenu = document.getElementById('btnMenu')
 const cards = document.getElementById("cards")
+const cardsDeco = document.getElementById("cardsDeco") 
+const cardsVelas = document.getElementById("cardsVelas") 
 const itemsCarrito = document.getElementById("itemsCarrito")
 const itemsFav = document.getElementById("itemsFav")
 const footer = document.getElementById("footer")
@@ -13,8 +15,10 @@ const templateFavoritos = document.getElementById("templateFavoritos").content
 const fragment = document.createDocumentFragment()
 let carrito = {}
 let wishList = {}
+let productosHome
+let productosDeco
 
-// eventos
+// EVENTOS
 document.addEventListener("DOMContentLoaded", ()=>{
     fetchData()
     // agregar productos al ls
@@ -27,36 +31,62 @@ document.addEventListener("DOMContentLoaded", ()=>{
         pintarCarrito()
     }
 })
+
 cards.addEventListener("click", e=>{
     agregarAlCarrito(e)
 })
 cards.addEventListener("click", e=>{
     agregarFavoritos(e)
 })
+cardsDeco.addEventListener("click", e=>{
+    agregarAlCarrito(e)
+})
+cardsDeco.addEventListener("click", e=>{
+    agregarFavoritos(e)
+})
+cardsVelas.addEventListener("click", e=>{
+    agregarAlCarrito(e)
+})
+cardsVelas.addEventListener("click", e=>{
+    agregarFavoritos(e)
+})
 itemsCarrito.addEventListener("click", e => {
     btnAccion(e)
 })
 
-// funciones
 
+// FUNCIONES
 // menu
 btnMenu.addEventListener('click',()=>{
     const menuItems = document.querySelector('.menuItems')
     menuItems.classList.toggle('show')
 })
 
+// obtener json
 const fetchData = async () =>{
     try {
         const res = await fetch("./json/api.json")
         const data = await res.json()
-        pintarCards(data)
+        obtenerObjHome(data)
+        pintarCards(productosHome)
+
+        obtenerObjDeco(data)
+        pintarCardsDeco(productosDeco)
+
+        obtenerObjVelas(data)
+        pintarCardsVelas(productosVelas)
     } catch (error) {   
     }
 }
 
-// pintar cards en el html
-const pintarCards = (data) =>{
-    data.forEach(producto => {
+// obtener objetos home
+const obtenerObjHome = (data)=>{
+    productosHome = data.filter(producto => producto.categoria == "home")
+    return productosHome
+}
+// pintar objetos home
+const pintarCards = (productosHome) =>{
+    productosHome.forEach(producto => {
         templateCard.querySelector(".title").textContent = producto.title
         templateCard.querySelector(".precio").textContent = producto.precio
         templateCard.querySelector("img").setAttribute("src", producto.img) 
@@ -68,32 +98,48 @@ const pintarCards = (data) =>{
     cards.appendChild(fragment)
 }
 
+// obtener objetos deco
+const obtenerObjDeco = (data)=>{
+    productosDeco = data.filter(producto => producto.categoria == "deco")
+    return productosDeco
+}
+// pintar objetos deco
+const pintarCardsDeco = (productosDeco) =>{
+    productosDeco.forEach(producto => {
+        templateCard.querySelector(".title").textContent = producto.title
+        templateCard.querySelector(".precio").textContent = producto.precio
+        templateCard.querySelector("img").setAttribute("src", producto.img) 
+        templateCard.querySelector(".btnAgregarCarrito").dataset.id = producto.id
+        templateCard.querySelector(".btnFavoritos").dataset.id = producto.id
+        const clone = templateCard.cloneNode(true)
+        fragment.appendChild(clone)
+    })
+    cardsDeco.appendChild(fragment)
+}
 
-// capturar toda la card para el carrito
+// obtener objetos velas
+const obtenerObjVelas = (data)=>{
+    productosVelas = data.filter(producto => producto.categoria == "velas")
+    return productosVelas
+}
+// pintar objetos velas
+const pintarCardsVelas = (productosVelas) =>{
+    productosVelas.forEach(producto => {
+        templateCard.querySelector(".title").textContent = producto.title
+        templateCard.querySelector(".precio").textContent = producto.precio
+        templateCard.querySelector("img").setAttribute("src", producto.img) 
+        templateCard.querySelector(".btnAgregarCarrito").dataset.id = producto.id
+        templateCard.querySelector(".btnFavoritos").dataset.id = producto.id
+        const clone = templateCard.cloneNode(true)
+        fragment.appendChild(clone)
+    })
+    cardsVelas.appendChild(fragment)
+}
+
+
+// capturar toda la card para el carrito y mostrar alert
 const agregarAlCarrito = e =>{
     e.target.classList.contains("btnAgregarCarrito") && setCarrito(e.target.parentElement.parentElement.parentElement)
-    // Swal.fire({
-    //     title: 'Genial!',
-    //     text: 'Se ha agregado su producto al carrito',
-    //     icon: 'success',
-    //     confirmButtonText: 'Cool'
-    //   })
-    const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: false,
-        timer: 3000,
-        timerProgressBar: true,
-        didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
-        }
-      })
-      
-      Toast.fire({
-        icon: 'success',
-        title: 'Su producto se ha añadido al carrito'
-      })
     
     e.stopPropagation()
 }
@@ -120,6 +166,24 @@ const setCarrito = objeto =>{
     }
     // empujamos el objeto a nuestro obj carrito
     carrito[producto.id] = {...producto}
+    // alert de que se ha añadido el prod al carrito
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Su producto se ha añadido al carrito'
+      })
+      
     pintarCarrito()
 }
 

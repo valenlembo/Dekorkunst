@@ -15,7 +15,7 @@
     },
     {
       "categoria": "home",
-      "precio": 6000,
+      "precio": 6500,
       "id": 3,
       "title": "Pie de Cama Rojo",
       "img": "./img/pieDeCama2.jpeg" 
@@ -86,29 +86,169 @@
     {
       "categoria": "deco",
       "precio": 5600,
-      "id": 13,
+      "id": 1,
       "title": "Almohadones Varios",
       "img": "./img/almohadones.jpeg"
     },
     {
       "categoria": "deco",
-      "precio": 15500,
-      "id": 14,
+      "precio": 60000,
+      "id": 11,
       "title": "Baulera Amarilla",
       "img": "./img/bauleraAmarilla.jpeg"
     },
     {
       "categoria": "deco",
       "precio": 290600,
-      "id": 15,
+      "id": 13,
       "title": "Set Mesa Y Bancos",
       "img": "./img/mesaConBancos.jpeg"
     },
     {
       "categoria": "deco",
       "precio": 205600,
-      "id": 16,
+      "id": 14,
       "title": "Set Mesa Y Banquetas",
       "img": "./img/mesaYBanquetas.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 35000,
+      "id": 15,
+      "title": "Set Mesa y Lampara",
+      "img": "./img/mesaYLampara.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 6500,
+      "id": 16,
+      "title": "Pie de Cama Azul",
+      "img": "./img/pieCamaAzul.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 6500,
+      "id": 3,
+      "title": "Pie de Cama Rojo",
+      "img": "./img/pieDeCama.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 35000,
+      "id": 17,
+      "title": "Comoda",
+      "img": "./img/comoda.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 19550,
+      "id": 18,
+      "title": "Set Mueble y Cuadro",
+      "img": "./img/setMuebleCuadro.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 23000,
+      "id": 19,
+      "title": "Mesa Ratona",
+      "img": "./img/mesaRatona.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 6800,
+      "id": 20,
+      "title": "Portalibros",
+      "img": "./img/portaLibros.jpeg"
+    },
+    {
+      "categoria": "deco",
+      "precio": 18000,
+      "id": 10,
+      "title": "Alfombra",
+      "img": "./img/alfombra.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 700,
+      "id": 21,
+      "title": "Tall Ribbed Tower",
+      "img": "./img/velas10.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 1000,
+      "id": 4,
+      "title": "Short Ribbed Tower",
+      "img": "./img/velas12.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 6550,
+      "id": 6,
+      "title": "Mixed Set",
+      "img": "./img/velas13.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 1800,
+      "id": 22,
+      "title": "Tangled",
+      "img": "./img/velas14.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 3300,
+      "id": 23,
+      "title": "Wabe x3",
+      "img": "./img/velas4.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 3500,
+      "id": 24,
+      "title": "Set Tower Wabe",
+      "img": "./img/velas3.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 1500,
+      "id": 25,
+      "title": "Set Black",
+      "img": "./img/setMuebleCuadro3.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 2200,
+      "id": 26,
+      "title": "Wabe x2",
+      "img": "./img/velas18.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 1300,
+      "id": 27,
+      "title": "Shell",
+      "img": "./img/velas17.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 4000,
+      "id": 28,
+      "title": "Set Tall Ribbed Tower",
+      "img": "./img/velas8.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 4500,
+      "id": 29,
+      "title": "Set Cushion Cube x4",
+      "img": "./img/velas15.jpeg"
+    },
+    {
+      "categoria": "velas",
+      "precio": 1500,
+      "id": 9,
+      "title": "Geo Lady",
+      "img": "./img/velas16.jpeg"
     }
   ]
