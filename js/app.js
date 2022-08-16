@@ -175,7 +175,7 @@ const setCarrito = objeto =>{
       
       Toast.fire({
         icon: 'success',
-        title: 'Su producto se ha añadido al carrito'
+        title: 'Su producto se ha añadido al Carrito de Compras'
       })
       
     pintarCarrito()
@@ -203,7 +203,7 @@ const setFavoritos = objeto =>{
       
       Toast.fire({
         icon: 'success',
-        title: 'Su producto se ha añadido a la wish list'
+        title: 'Su producto se ha añadido a la Lista de Deseos'
       })
     pintarFavoritos()
 }
@@ -251,7 +251,7 @@ const pintarFooter = () => {
     footer.innerHTML = ""
     if(Object.keys(carrito).length === 0){
         footer.innerHTML = `
-        <td class="p-5">Carrito vacío</td>
+        <td class="p-5">Carrito de Compras vacío</td>
         <td><i class="fa fa-cart-plus"></i></td>
         ` 
         return
@@ -274,9 +274,11 @@ const pintarFooter = () => {
     comprar.addEventListener("click", ()=>{
         Swal.fire(
             'Good job!',
-            'La compra se ha completado con exito',
+            'La compra se ha completado con éxito',
             'success'
           )
+        carrito = {}
+        pintarCarrito()
     })
 }
 
@@ -285,7 +287,7 @@ const pintarFooterFav = () => {
     footerFav.innerHTML= ""
     if(Object.keys(wishList).length === 0){
         footerFav.innerHTML = `
-        <td class="p-5">Wish List vacia</td>
+        <td class="p-5">Lista de Deseos vacia</td>
         <td><i class="fa fa-heart"></i></td>
         `
         btnVaciarWL.innerHTML = ""
