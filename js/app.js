@@ -1,6 +1,5 @@
 
 // VARS GLOBALES
-const btnMenu = document.getElementById('btnMenu')
 const cards = document.getElementById("cards")
 const cardsDeco = document.getElementById("cardsDeco") 
 const cardsVelas = document.getElementById("cardsVelas") 
@@ -56,11 +55,6 @@ itemsCarrito.addEventListener("click", e => {
 
 
 // FUNCIONES
-// menu
-btnMenu.addEventListener('click',()=>{
-    const menuItems = document.querySelector('.menuItems')
-    menuItems.classList.toggle('show')
-})
 
 // obtener json
 const fetchData = async () =>{
@@ -195,6 +189,22 @@ const setFavoritos = objeto =>{
         precio: objeto.querySelector(".precio").textContent,
     }
     wishList[producto.id] = {...producto}
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Su producto se ha añadido a la wish list'
+      })
     pintarFavoritos()
 }
 
@@ -240,13 +250,14 @@ const pintarFavoritos = () => {
 const pintarFooter = () => {
     footer.innerHTML = ""
     if(Object.keys(carrito).length === 0){
-        footer.innerHTML = `<th scope="row" colspan="5">Carrito vacío</th>` 
+        footer.innerHTML = `
+        <td class="p-5">Carrito vacío</td>
+        <td><i class="fa fa-cart-plus"></i></td>
+        ` 
         return
     }
     const nCantidad = Object.values(carrito).reduce((acc, {cantidad}) => acc + cantidad, 0)
     const nPrecio = Object.values(carrito).reduce((acc, {cantidad, precio}) => acc + cantidad * precio, 0)
-    
-    templateFooter.querySelectorAll("td")[0].textContent = nCantidad
     templateFooter.querySelector("span").textContent = nPrecio
 
     const clone = templateFooter.cloneNode(true)
@@ -258,18 +269,30 @@ const pintarFooter = () => {
         carrito = {}
         pintarCarrito()
     })
+    
+    const comprar = document.getElementById("comprar")
+    comprar.addEventListener("click", ()=>{
+        Swal.fire(
+            'Good job!',
+            'La compra se ha completado con exito',
+            'success'
+          )
+    })
 }
 
 const pintarFooterFav = () => {
     const btnVaciarWL = document.getElementById("btnVaciarWL")
     footerFav.innerHTML= ""
     if(Object.keys(wishList).length === 0){
-        footerFav.innerHTML = `<th scope="row" colspan="5">Wish List vacia</th>`
+        footerFav.innerHTML = `
+        <td class="p-5">Wish List vacia</td>
+        <td><i class="fa fa-heart"></i></td>
+        `
         btnVaciarWL.innerHTML = ""
         return
     }else if(Object.keys(wishList).length >= 1){
         footerFav.innerHTML = ""
-        btnVaciarWL.innerHTML = `<button class="btn btn-danger" id="vaciarWL"> vaciar wish list </button>`
+        btnVaciarWL.innerHTML = `<button class="btn btn-dark" id="vaciarWL"> vaciar wish list </button>`
         const vaciarWL = document.getElementById("vaciarWL")
         vaciarWL.addEventListener("click", () => {
         wishList = {}

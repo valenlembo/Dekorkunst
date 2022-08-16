@@ -20,6 +20,7 @@ body {
     height: 140px;
     width: 100%;
     display: flex;
+	background-color: #f2f2f2;
     justify-content: space-between;
     align-items: center;
 	border-bottom: solid 1px grey;
@@ -51,15 +52,14 @@ body {
 }
 .containerCarrito, .containerDeseos{
 	position: absolute;
-	width: 100%;
+	width: 600px;
 	top: 140px;
 	z-index: 2;
 	opacity: 0;
 	visibility: hidden;
 	transition: 1s;
-	max-width: 550px;
 	background: #f2f2f2;
-	height: 400px;
+	height: 470px;
 	border-radius: 0 0 10px 10px;
 	right: 0px;
 	overflow-y: scroll;
@@ -77,6 +77,31 @@ body {
 .btnDelete{
     width: 32px;
 }
+.total{
+	font-size: large;
+	transform: translateX(240px);
+	margin-top: 20px;
+}
+#vaciarCarrito{
+	height: 50px;
+	margin-right: 10px;
+}
+#comprar{
+	width: 100px;
+}
+.botonesCarrito{
+	display: flex;
+	transform: translateX(190px);
+	margin-bottom: 20px;
+}
+#vaciarWL{
+	transform: translateX(230px);
+	margin: 20px;
+}
+#btnVaciarWL button{
+	background-color: black;
+}
+
 /* menu responsive */
 #btnMenu {
     margin-right: 30px;
@@ -255,8 +280,7 @@ ul.show {
 		justify-content: center;
 	}
 	.menu .menuItems li a {
-		font-size: 16px;
-		padding: 5px 15px;
+		display: none;
 	}
 }
 @media screen and (max-width: 858px){
@@ -272,29 +296,9 @@ ul.show {
 		display: flex;
 		justify-content: center;
 	}
-	.menu #btnMenu {
-		display: inline-flex;
-		padding: 35px;
-		color: rgb(68, 68, 68);
-	}
-	.menuItems {
-		position: fixed;
+}
+@media screen and (max-width: 645px){
+	.containerCarrito, .containerDeseos{
 		width: 100vw;
-		height: calc(100% - 125px); 
-		/* #cd9595 color del logo */
-		background: #f2f2f2;
-		top: -100vh;
-		text-align: center;
-		transition: all 0.4s;
-		flex-direction: column;
-		padding: 0;
-	}
-	.menu .menuItems li {
-		margin: 30px 0 0 0;
-		line-height: 30px;
-	}
-	.menu .menuItems li a {
-		font-size: 20px;
-		color: rgb(68, 68, 68);
 	}
 }
